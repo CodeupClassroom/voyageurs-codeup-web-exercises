@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<p id="name" class="" style="color: blue">Fernando</p>
+
+<p>Mendoza</p>
+
+<form action="https://webhook.site/ff8c3a96-69aa-4662-89ae-b943d7c8067f" method="post">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" placeholder="example@mail.com">
+    <label for="pass">Password</label>
+    <input type="password" name="pass" id="pass" placeholder="8 chars long">
+    <label for="bio">Bio:</label>
+    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Talk to me about you"></textarea>
+    <h5>How did you hear about us?</h5>
+    <section>
+        <input type="radio" name="about-us" value="billboard"> Billboard
+        <br>
+        <input type="radio" name="about-us" value="radio-advertisement"> Radio advertisement
+        <br>
+        <input type="radio" name="about-us" value="internet-advertisement"> Internet advertisement
+        <br>
+        <input type="radio" name="about-us" value="other"> Other
+        <br>
+    </section>
+
+    <select name="web-browser" id="web-browser">
+        <option value="0">Select one</option>
+        <option value="opera">Opera</option>
+        <option value="chrome">Chrome</option>
+        <option value="firefox">Firefox</option>
+        <option value="ie">IE (Edge)</option>
+    </select>
+
+    <button>Send</button>
+    <!--<input type="submit" value="Create user">-->
+</form>
+
+</body>
+</html>
