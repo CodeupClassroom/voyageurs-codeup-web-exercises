@@ -1,0 +1,38 @@
+body {
+    --bg-success: #D6F2DC;
+    --text-success: #697b6d;
+    --bg-info: #D0DEFC;
+    --text-info: #6e7585;
+    --bg-warning: #FCFBCE;
+    --text-warning: #73725d;
+    --bg-error: #F4D4D7;
+    --text-error: #5b4f50;
+}
+
+.message {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid lightgrey;
+    font-weight: bold;
+}
+
+.message-success {
+    background-color: var(--bg-success);
+    color: var(--text-success);
+}
+
+.message-info {
+    background-color: var(--bg-info);
+    color: var(--text-info);
+}
+
+.message-warning {
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
+}
+
+.message-error {
+    background-color: var(--bg-error);
+    color: var(--text-error);
+}
