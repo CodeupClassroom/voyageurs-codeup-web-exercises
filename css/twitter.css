@@ -4,10 +4,14 @@
     --main-link-color: #848487;
     --light-bg: #FFF;
     --separator-color: #DDD;
+
 }
+
 * {
     box-sizing: border-box;
+    /*border: 1px solid black;*/
 }
+
 body, html {
     background-color: var(--main-bg);
     height: 100%;
@@ -26,6 +30,7 @@ header {
 a {
     color: var(--link-color);
 }
+
 .nav {
     list-style-type: none;
     padding: 0;
@@ -45,13 +50,17 @@ a {
     width: 100%;
     z-index: 1000;
     top: 0;
+    height: 66px;
+    background-color: white;
 }
 .nav-link:hover {
     color: var(--link-color);
 }
+
 .profile {
     background: var(--light-bg);
 }
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
@@ -98,6 +107,7 @@ a {
     margin: 0 0.5em;
     display: inline-block;
     float: left;
+    width: calc(25% - 1em);
 }
 
 .profile-details {
