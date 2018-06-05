@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /*background-color: #5b4f50;*/
+        }
+
+        .container {
+            /*background-color: #3B94D9;*/
+            width: 80%;
+            margin: 0 auto;
+            height: 100vh;
+            max-width: 1200px;
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        .column {
+            float: left;
+            /*padding: 10px;*/
+        }
+
+        .one-third {
+            width: 33.33%;
+        }
+
+        .one-half {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .one-third, .one-half {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>4x3</h1>
+
+    <div class="row">
+        <div class="column one-third">First Name</div>
+        <div class="column one-third">Last Name</div>
+        <div class="column one-third">Age</div>
+    </div>
+
+    <div class="row">
+        <div class="column one-third">Fer</div>
+        <div class="column one-third">Mendoza</div>
+        <div class="column one-third">28</div>
+    </div>
+
+    <div class="row">
+        <div class="column one-third">Ryan</div>
+        <div class="column one-third">Orsinger</div>
+        <div class="column one-third">30</div>
+    </div>
+
+    <div class="row">
+        <div class="column one-third">Ryan</div>
+        <div class="column one-third">Orsinger</div>
+        <div class="column one-third">30</div>
+    </div>
+
+    <!-- 2 x 2-->
+    <h1>2x2</h1>
+    <div class="row">
+        <div class="column one-half">One half</div>
+        <div class="column one-half">My other half</div>
+    </div>
+
+    <div class="row">
+        <div class="column one-half">One half</div>
+        <div class="column one-half">My other half</div>
+    </div>
+
+</div>
+
+</body>
+</html>
