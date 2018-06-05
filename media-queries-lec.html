@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive</title>
+    <style>
+
+        #canvas {
+            background-color: #0fb784;
+            height: 200px;
+            width: 100%;
+        }
+
+        /* Small devices (tablets, 768px and up) */
+        @media screen and (min-width: 768px) {
+            #canvas {
+                background-color: #3B94D9;
+            }
+        }
+
+        /* Medium devices (desktops, 992px and up) */
+        @media screen and (min-width: 992px) {
+            #canvas {
+                border-radius: 50%;
+                position: absolute;
+                top: -100px;
+                left: 0;
+            }
+        }
+
+        /* Large devices (large desktops, 1200px and up) */
+        @media screen and (min-width: 1200px) {
+            /* ... */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="canvas"></div>
+
+</body>
+</html>

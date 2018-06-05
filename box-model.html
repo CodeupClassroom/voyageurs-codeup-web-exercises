@@ -19,29 +19,86 @@
             border: 10px solid black;
             /*margin-left: 10px;*/
         }
+
         .boxes {
             background-color: antiquewhite;
             width: 200px;
             height: 200px;
+            transition: width 2s;
         }
 
-        #box2 {
+        .boxes:hover {
             width: 100%;
         }
+
         span {
             margin: 10px;
         }
+
+        ul {
+            display: inline-flex;
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            cursor: pointer;
+            text-align: center;
+            width: 20%;
+            font-family: "Arial Black";
+            color: yellow;
+            font-weight: bold;
+            opacity: 0.8;
+            height: 10vh;
+            transition: height 0.5s, opacity 1s, color 1s;
+        }
+
+        li:hover {
+            height: 15vh;
+            opacity: 1;
+            color: #a8a800;
+        }
+
+        #menu1 {
+            background-color: lightblue;
+        }
+
+        #menu2 {
+            background-color: blueviolet;
+        }
+
+        #menu3 {
+            background-color: cadetblue;
+        }
+
+        #menu4 {
+            background-color: cornflowerblue;
+        }
+
+        #menu5 {
+            background-color: lightskyblue;
+        }
+
     </style>
 </head>
 <body>
 
-<div id="box1" class="boxes">
-    <span>content of box 1</span>
-</div>
+<ul id="menu">
+    <li id="menu1" class="item">Item 1</li>
+    <li id="menu2" class="item">Item 2</li>
+    <li id="menu3" class="item">Item 3</li>
+    <li id="menu4" class="item">Item 4</li>
+    <li id="menu5" class="item">Item 5</li>
+</ul>
+<!--<div id="box1" class="boxes">-->
+    <!--<span>content of box 1</span>-->
+<!--</div>-->
 
-<div id="box2" class="boxes">
-    content of box 2
-</div>
+<!--<div id="box2" class="boxes">-->
+    <!--content of box 2-->
+<!--</div>-->
 
 </body>
 </html>
