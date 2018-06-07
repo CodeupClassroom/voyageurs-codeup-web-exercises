@@ -1,0 +1,17 @@
+.jumbotron {
+    background-image: url('http://java.codeup.com/examples/bootstrap/pizza.png');
+    background-size: cover;
+}
+
+.jumbo-center {
+    text-align: center;
+    background-color: white;
+    opacity: 0.5;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
