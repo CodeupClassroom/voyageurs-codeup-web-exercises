@@ -43,6 +43,57 @@ if (willEnterNum) {
 
 }
 
+// refactor with functions
+
+function isNumeric(num) {
+    return !isNaN(num) && num !== true && num !== false;
+}
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+function addHundred(num) {
+    return num + 100;
+}
+
+function isPositive(num) {
+    return num >= 0;
+}
+
+function createEvenOddMessage(num) {
+    return (isEven(num)) ? "Number is even" : "Number is odd";
+}
+
+function createPosNegMessage(num) {
+    return (isPositive(num)) ? "Number is positive" : "Number is negative";
+}
+
+function createAddHundredMessage(num) {
+    return "Number plus 100 is " + addHundred(num);
+}
+
+function processInput(input) {
+    if (isNumeric(input)) {
+        input = parseFloat(input);
+        alert(createEvenOddMessage(input));
+        alert(createAddHundredMessage(input));
+        alert(createPosNegMessage(input));
+    } else {
+        alert("Number is not numeric");
+    }
+}
+
+function getUserInput() {
+    var willProceed = confirm("Do you wish to enter a number?");
+    if (willProceed) {
+        var userNum = prompt("Please enter a number!");
+        processInput(userNum);
+    }
+}
+
+getUserInput();
+
 
 
 
