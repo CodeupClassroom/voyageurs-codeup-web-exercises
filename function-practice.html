@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function Practice</title>
+</head>
+<body>
+
+    <h1>Function Practice</h1>
+
+    <script>
+
+        // (function() {
+
+
+        "use strict";
+
+        // 3. This function should define two parameters: firstName and age
+
+        // 4. makeUsername() should return a username string consisting of the length of the firstName, combined with the first letter of the firstName in lowercase, combined with the age value
+
+        // Example 1:
+        // makeUsername("John", 20); // output = '4j20'
+        //
+        // Example 2:
+        // makeUsername("Sandy", 25); // output = '5s25'
+
+
+        function makeUsername(firstName, age) {
+            var output;
+            var firstLetter = firstName[0];
+            output = firstName.length + firstName[0].toLowerCase() + age;
+            return output;
+        }
+
+        console.log(makeUsername("Justin", 22));
+
+        // 6j22
+
+        // })();
+
+
+    </script>
+
+</body>
+</html>
