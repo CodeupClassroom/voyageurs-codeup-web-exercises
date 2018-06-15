@@ -16,83 +16,83 @@
  * Can you refactor your code to use functions?
  */
 
-var willEnterNum, userNum, evenOddMessage, posNegMessage, userNumPlusHundred;
-
-willEnterNum = confirm("Confirm you will enter a number");
-
-if (willEnterNum) {
-
-    var userNum = prompt("Please enter a number!");
-
-    if (!isNaN(userNum) && userNum !== true && userNum !== false) {
-
-        userNum = parseFloat(userNum);
-
-        evenOddMessage = (userNum % 2 === 0) ? "Number is even" : "Number is odd";
-        alert(evenOddMessage);
-
-        userNumPlusHundred = userNum + 100;
-        alert("The number plus 100: " + userNumPlusHundred);
-
-        posNegMessage = (userNum >= 0) ? "Number is positive" : "Number is negative";
-        alert(posNegMessage);
-
-    } else {
-        alert("Input was not a valid number!");
-    }
-
-}
-
-// refactor with functions
-
-function isNumeric(num) {
-    return !isNaN(num) && num !== true && num !== false;
-}
-
-function isEven(num) {
-    return num % 2 === 0;
-}
-
-function addHundred(num) {
-    return num + 100;
-}
-
-function isPositive(num) {
-    return num >= 0;
-}
-
-function createEvenOddMessage(num) {
-    return (isEven(num)) ? "Number is even" : "Number is odd";
-}
-
-function createPosNegMessage(num) {
-    return (isPositive(num)) ? "Number is positive" : "Number is negative";
-}
-
-function createAddHundredMessage(num) {
-    return "Number plus 100 is " + addHundred(num);
-}
-
-function processInput(input) {
-    if (isNumeric(input)) {
-        input = parseFloat(input);
-        alert(createEvenOddMessage(input));
-        alert(createAddHundredMessage(input));
-        alert(createPosNegMessage(input));
-    } else {
-        alert("Number is not numeric");
-    }
-}
-
-function getUserInput() {
-    var willProceed = confirm("Do you wish to enter a number?");
-    if (willProceed) {
-        var userNum = prompt("Please enter a number!");
-        processInput(userNum);
-    }
-}
-
-getUserInput();
+// var willEnterNum, userNum, evenOddMessage, posNegMessage, userNumPlusHundred;
+//
+// willEnterNum = confirm("Confirm you will enter a number");
+//
+// if (willEnterNum) {
+//
+//     var userNum = prompt("Please enter a number!");
+//
+//     if (!isNaN(userNum) && userNum !== true && userNum !== false) {
+//
+//         userNum = parseFloat(userNum);
+//
+//         evenOddMessage = (userNum % 2 === 0) ? "Number is even" : "Number is odd";
+//         alert(evenOddMessage);
+//
+//         userNumPlusHundred = userNum + 100;
+//         alert("The number plus 100: " + userNumPlusHundred);
+//
+//         posNegMessage = (userNum >= 0) ? "Number is positive" : "Number is negative";
+//         alert(posNegMessage);
+//
+//     } else {
+//         alert("Input was not a valid number!");
+//     }
+//
+// }
+//
+// // refactor with functions
+//
+// function isNumeric(num) {
+//     return !isNaN(num) && num !== true && num !== false;
+// }
+//
+// function isEven(num) {
+//     return num % 2 === 0;
+// }
+//
+// function addHundred(num) {
+//     return num + 100;
+// }
+//
+// function isPositive(num) {
+//     return num >= 0;
+// }
+//
+// function createEvenOddMessage(num) {
+//     return (isEven(num)) ? "Number is even" : "Number is odd";
+// }
+//
+// function createPosNegMessage(num) {
+//     return (isPositive(num)) ? "Number is positive" : "Number is negative";
+// }
+//
+// function createAddHundredMessage(num) {
+//     return "Number plus 100 is " + addHundred(num);
+// }
+//
+// function processInput(input) {
+//     if (isNumeric(input)) {
+//         input = parseFloat(input);
+//         alert(createEvenOddMessage(input));
+//         alert(createAddHundredMessage(input));
+//         alert(createPosNegMessage(input));
+//     } else {
+//         alert("Number is not numeric");
+//     }
+// }
+//
+// function getUserInput() {
+//     var willProceed = confirm("Do you wish to enter a number?");
+//     if (willProceed) {
+//         var userNum = prompt("Please enter a number!");
+//         processInput(userNum);
+//     }
+// }
+//
+// getUserInput();
 
 
 
@@ -118,11 +118,37 @@ getUserInput();
  * console.logging the function's return value
  */
 
+function analyzeColor(color){
+
+    if(color === 'blue'){
+        return color + ' is the color of the sky';
+    } else if (color === 'red') {
+        return 'Strawberries are ' + color;
+    } else if ( color === 'cyan'){
+        return 'I don\'t know anything about  ' + color;
+    } else {
+        return color +' not a valid color';
+    }
+
+}
+//
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('red'));
+// console.log(analyzeColor('cyan'));
+// console.log(analyzeColor('orange'));
+// console.log(analyzeColor());
+// console.log(analyzeColor(null));
+// console.log(analyzeColor(1));
+// console.log(analyzeColor(true));
+// console.log(analyzeColor(''));
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
+
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
@@ -130,6 +156,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
+
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
