@@ -175,7 +175,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
-console.log(analyzeColor(randomColor));
+// console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -191,9 +191,9 @@ console.log(analyzeColor(randomColor));
  * function to show it to the user.
  */
 
-var usersColor = prompt('Give me a color');
-var res = analyzeColor(usersColor);
-alert(res);
+// var usersColor = prompt('Give me a color');
+// var res = analyzeColor(usersColor);
+// alert(res);
 
 /* ########################################################################## */
 
@@ -217,6 +217,35 @@ alert(res);
  * return value.
  */
 
+function calculateTotal(luckyNumber, total){
+    var discountedPrice;
+
+    switch (luckyNumber){
+        case 5:
+            discountedPrice = 0;
+            break;
+        case 0:
+            discountedPrice = total;
+            break;
+        case 1:
+            discountedPrice = total * (0.9);
+            break;
+        case 2:
+            discountedPrice = total * (0.75);
+            break;
+        case 3:
+            discountedPrice = total * (0.65);
+            break;
+        case 4:
+            discountedPrice = total * (0.5);
+            break;
+        default:
+            discountedPrice = 'Invalid lucky number';
+    }
+
+    return discountedPrice;
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -225,4 +254,15 @@ alert(res);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+function genRnd(){
+    return Math.floor(Math.random() * 6);
+}
+
+var luckyNumber = genRnd();
+
+console.log(luckyNumber);
+console.log(calculateTotal(luckyNumber, 100));
+
+luckyNumber = genRnd();
+console.log(luckyNumber);
+console.log(calculateTotal(luckyNumber, 200));
