@@ -120,15 +120,33 @@
 
 function analyzeColor(color){
 
-    if(color === 'blue'){
-        return color + ' is the color of the sky';
-    } else if (color === 'red') {
-        return 'Strawberries are ' + color;
-    } else if ( color === 'cyan'){
-        return 'I don\'t know anything about  ' + color;
-    } else {
-        return color +' not a valid color';
+    // if(color === 'blue'){
+    //     return color + ' is the color of the sky';
+    // } else if (color === 'red') {
+    //     return 'Strawberries are ' + color;
+    // } else if ( color === 'cyan'){
+    //     return 'I don\'t know anything about  ' + color;
+    // } else {
+    //     return color +' not a valid color';
+    // }
+
+    var result;
+
+    switch (color) {
+        case 'blue':
+            result = color + ' is the color of the sky';
+            break;
+        case 'red':
+            result = 'Strawberries are ' + color;
+            break;
+        case 'cyan':
+            result = 'I don\'t know anything about  ' + color;
+            break;
+        default:
+            result = color +' not a valid color';
     }
+
+    return result;
 
 }
 //
@@ -164,12 +182,18 @@ console.log(analyzeColor(randomColor));
  * Refactor your above function to use a switch-case statement
  */
 
+// Checked
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var usersColor = prompt('Give me a color');
+var res = analyzeColor(usersColor);
+alert(res);
 
 /* ########################################################################## */
 
