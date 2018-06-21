@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<a id="linkGoogle" href="https://google.com"></a>
+<main id="container">
+    <form action="#" name="myForm">
+        <fieldset class="width-80">
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input class="form-input" type="text" id="username" name="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input class="form-input" type="password" id="password" name="password" class="form-control">
+            </div>
+            <button id="login-btn" class="btn btn-block">Login</button>
+        </fieldset>
+    </form>
+</main>
+<script>
+
+    var formLabels = document.getElementsByClassName('form-label');
+
+    console.log(formLabels);
+
+    // This will not work
+    // formLabels.innerHTML = 'Fer';
+
+    for(var i=0; i < formLabels.length ;i++){
+        // console.log(i);
+        formLabels[i].innerHTML = formLabels[i].innerHTML + ' Fer';
+        // console.log(formLabels[i]);
+    }
+
+    var textInputs = document.getElementsByClassName('form-input');
+    var container = document.getElementById('container');
+
+    // container.remove();
+    // container.style.display = 'none';
+
+    container.style.
+
+    setTimeout(function () {
+
+        container.style.backgroundColor = 'red';
+
+        for(var i=0; i < textInputs.length ;i++){
+
+            if(textInputs[i].value === ''){
+                alert('Inputs can\'t be empty');
+                console.log('id', textInputs[i].id);
+            }else{
+                console.log(textInputs[i].value);
+            }
+
+        }
+    }, 3000);
+
+    var loginBtn = document.getElementById('login-btn');
+
+    // loginBtn.remove();
+
+    var linkGoogle = document.getElementById('linkGoogle');
+
+    linkGoogle.href = 'http://fer-mendoza.com';
+    linkGoogle.innerText = 'Link to google';
+
+</script>
+</body>
+</html>
