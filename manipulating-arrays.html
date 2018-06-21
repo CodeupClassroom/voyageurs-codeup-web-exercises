@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+'use strict';
+
+(function(){
+
+    var langs = ['Javascript', 'CSS', 'HTML', 'Java'];
+
+    console.log(langs[0]);
+
+    langs.unshift('Groovy');
+
+    console.log(langs[0]);
+
+    langs.push('PHP');
+    //
+    langs.shift();
+    langs.shift();
+
+    langs.pop();
+
+    console.log('index of HTML is ' + langs.indexOf('HTML'));
+    console.log('HTML Hardcoded value ' + langs.indexOf('HTML'));
+
+    langs.forEach( function(element, index){
+        console.log('element ' + element + ' index ' + index);
+    });
+
+})();
+
+</script>
+
+</body>
+</html>
