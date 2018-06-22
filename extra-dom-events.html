@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM EVENTS</title>
+    <style>
+        body {
+            min-height: 10000px;
+            background: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            top: 0;
+            position: fixed;
+            height: 250px;
+            width: 250px;
+            color: white;
+            border: solid 2px black;
+        }
+
+        h1 {
+            text-align: center;
+            color: white !important;
+            text-shadow: 2px 2px 2px #000000;
+        }
+        main {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <main>
+        <h1>Current Color</h1>
+        <label for="text">Enter text</label>
+        <input id="text" placeholder="Enter RGB values" type="text">
+    </main>
+
+<script>
+
+    "use strict";
+
+    var red = 0;
+    var green = 0;
+    var blue = 0;
+    var textInput = document.getElementById("text");
+    var heading = document.getElementsByTagName("h1")[0];
+
+    // effect green on scroll only
+    window.addEventListener("mousewheel", function(e) {
+        red = (red < 0) ? 0 : red;
+        red = (red >= 250) ? 250 : red;
+        if (e.deltaY > 0) {
+            red += 2;
+        } else {
+            red -= 2;
+        }
+        document.body.style.background = "rgb(" + red + " " + green + " " + blue;
+    });
+
+    // change the color of the box only
+    window.addEventListener("mousemove", function (e) {
+        console.log("test");
+        green = e.clientX % 250;
+        blue = e.clientY % 250;
+        document.body.style.background = "rgb(" + red + " " + green + " " + blue;
+    });
+
+
+    // fill the h1 with text on keyup events in text input
+    // enter should set color of background
+    textInput.addEventListener("keyup", function(e) {
+
+    });
+
+    function processColor(str) {
+        var strArr = str.split(" ");
+        red = Number(strArr[0]);
+        green = Number(strArr[1]);
+        blue = Number(strArr[2]);
+        document.body.style.background = "rgb(" + red + " " + green + " " + blue;
+    }
+
+
+
+</script>
+
+</body>
+</html>

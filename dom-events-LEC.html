@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events Lecture</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <h1>DOM Events Lecture</h1>
+    <button id="testBtn">Test Button</button>
+    <button id="loginBtn">Login</button>
+    <button id="shrinkBtn">Restore Text Size</button>
+    <button id="deactiveHover">Deactivate Hover</button>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad aliquam culpa delectus dolores ducimus eius eum ex excepturi
+        impedit incidunt ipsum minus necessitatibus officia quisquam,
+        recusandae rerum similique sit veniam? Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit.
+    </p>
+
+
+<script>
+
+    "use strict";
+
+    //    https://developer.mozilla.org/en-US/docs/Web/Events
+
+    // ==========================  Simple Example
+
+    // create variable to hold DOM reference to button element
+
+    var testBtn = document.getElementById("testBtn");
+
+
+    // add event listener using anonymous function
+    //     testBtn.addEventListener("click", function() {
+    //         console.log("click");
+    //     });
+
+
+    // add event listener from a previously defined function
+
+        // function logsClick() {
+        //     console.log("click");
+        // }
+        //
+        // testBtn.addEventListener("click", logsClick);
+
+
+
+    // ==========================  Register Additional Events
+
+    // when a cursor hovers over a paragraph, change the text color, font-family, and make larger
+
+        // element reference to paragraph
+        var para = document.getElementsByTagName("p")[0];
+
+        function makeFancyPara() {
+            console.log(this);
+            para.style['font-size'] = "1.5em";
+            para.style.color = "brown";
+            para.style.fontFamily = "Comic Sans MS";
+        }
+
+        function makeBoringPara() {
+            para.style['font-size'] = "1em";
+            para.style.color = "black";
+            para.style.fontFamily = "times";
+        }
+
+        para.addEventListener("mouseover", makeFancyPara);
+
+        document.addEventListener("click", makeBoringPara);
+
+        document.getElementById("deactiveHover").addEventListener("click", function() {
+            para.removeEventListener("mouseover", makeFancyPara);
+        });
+
+
+        // change font-size of whatever "this" refers to
+
+
+    // ==========================  Event Object
+
+    //    document.addEventListener("click", function(e) {
+    //        console.log(e);
+    //    });
+    //
+    //
+    //    document.addEventListener("click", function(e) {
+    //        var red = e.screenX % 256;
+    //        var green = e.screenY % 256;
+    //        var blue = "ff";
+    //
+    //        console.log(e.screenX);
+    //        console.log(e.screenY);
+    //
+    //        red = red.toString(16);
+    //        green = green.toString(16);
+    //        blue = blue.toString(16);
+    //        document.body.style['background-color'] = "#" + red + green + blue;
+    //    });
+
+
+    // ==========================  Remove Event Listener
+
+
+        // must be specific to the element with the listener attached and the event type
+
+
+
+
+
+
+
+
+
+    // ==========================  LARGER EXAMPLE
+
+    // // element reference to loginBtn button
+    //
+    // var loginBtn = document.getElementById("loginBtn");
+    //
+    // // Log in user function
+    //
+    //     function logUserIn () {
+    //
+    //         // removing the click event on the loginBtn button once it is clicked
+    //         loginBtn.removeEventListener("click", logUserIn);
+    //
+    //         alert("Welcome to a site for people with strange ideas.");
+    //
+    //         var age = prompt("You must be 18 or older to continue. Please enter your age.");
+    //
+    //         if (age >= 18) {
+    //             var answer = confirm("You are about to be re-directed to intense images. Do you wish to continue?");
+    //             if (answer) {
+    //                 window.location.replace("https://www.catgifpage.com/where-is-the-ball");
+    //             } else {
+    //                 alert("You made the right choice.");
+    //             }
+    //         } else if (age === null) {
+    //             alert("Well I can't let you in if you don't tell me how old you are!");
+    //             userInteraction();
+    //         } else if (isNaN(parseInt(age))) {
+    //             alert("What a troll.");
+    //             userInteraction();
+    //         } else {
+    //             alert("Wait until you grow up.");
+    //         }
+    //
+    //     }
+    //
+    // // adding a click event to the login button that fires the logUserIn function
+    //
+    // loginBtn.addEventListener("click", logUserIn);
+
+    // ==========================  This Keyword
+
+    // *** see additional example
+
+
+</script>
+
+</body>
+</html>
