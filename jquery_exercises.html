@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, assumenda debitis fuga incidunt itaque, minus modi necessitatibus odio, officiis pariatur qui quidem recusandae sed sequi sunt suscipit temporibus ullam vitae.</p>
+
+<p>
+    Fer
+</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    (function() {
+        "use strict";
+
+        $('#main-header').click(function(){
+
+
+            var currentColor = $(this).css('background-color');
+
+            console.log(currentColor);
+
+            if(currentColor == 'rgb(0, 255, 255)'){
+                $(this).css('background-color', 'white');
+            }else{
+                $(this).css('background-color', 'cyan');
+            }
+
+        });
+
+        $('p').dblclick(function (){
+            $('p').css('font-size', '18px');
+        });
+
+
+        $('li').hover(function(){
+            $('li').css('color', 'red');
+        }, function(){
+            $('li').css('color', 'black');
+        });
+
+
+    })();
+</script>
+</body>
+</html>
