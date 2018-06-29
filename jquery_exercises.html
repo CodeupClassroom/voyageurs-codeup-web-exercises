@@ -32,6 +32,9 @@
     Fer
 </p>
 
+<input id="name" type="password">
+<button id="btn-input">Remove Event</button>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
     (function() {
@@ -62,6 +65,25 @@
         }, function(){
             $('li').css('color', 'black');
         });
+
+
+        // Adds a key event on the password input
+        $('#name').keyup(function(e){
+
+            console.log(e.key);
+            console.log(e.keyCode);
+
+            // If the user types f, you get an alert
+            if(e.key  === 'f'){
+                alert('That\s how my name starts!');
+            }
+        });
+
+        // Remove all the events from the password input
+        $('#btn-input').click(function(){
+            $('#name').off();
+        });
+
 
 
     })();
