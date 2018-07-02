@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+
+    <style>
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        .cool-box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .awesome-title {
+            font-family: "Comic Sans MS";
+            font-size: 40px;
+            font-weight: bold;
+            background-color: blue;
+            color: yellow;
+            padding: 10px;
+            padding-bottom: 10px;
+            border-radius: 50px;
+        }
+
+        .night-mode {
+            background: black;
+            color: whitesmoke;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <main class="container">
+
+        <h1 class="text-center">Sign In</h1>
+        <h1>Some other</h1>
+
+        <div class="box"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Login Form</h3>
+                <button id="night-mode-btn" class="btn btn-default">Night Mode</button>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input class="form-control" type="password" id="pass">
+                    </div>
+                    <div class="form-group">
+                        <label for="verify">Verify Password</label>
+                        <input class="form-control" type="password" id="verify">
+                    </div>
+                    <button id="password-btn" class="btn btn-primary btn-block hidden">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <h1>Something Else</h1>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function() {
+            "use strict";
+
+            // Getter (returns a value)
+
+
+                // get the current inner HTML of the h1 element
+
+                    // var h1Html = $('h1').html();
+                    //
+                    // console.log(h1Html);
+
+
+                // get the current display value of .box
+
+                    // var displayProp = $('.box').css('display');
+                    // console.log(displayProp);
+
+
+            // Setter (returns a jQuery object)
+
+                // set height of box to 70px and width to 100px
+
+
+                // Option 1
+                //     $('.box').css('height', '70px');
+                //     $('.box').css('width', '100px');
+
+                // Option 2
+                //     $('.box').css('height', '70px')
+                //     .css('width', '100px');
+
+                // Option 3
+                //     $('.box').css({
+                //         height: '70px',
+                //         width: '100px'
+                //     });
+
+
+
+            // addClass() and removeClass()
+
+                // Apply cool-box to .box initially
+                //     $('.box').addClass('cool-box');
+
+
+                // Apply cool-box only when hovering over .box
+
+                    // $('.box').hover(function() {
+                    //     $(this).addClass('cool-box');
+                    // }, function() {
+                    //     $(this).removeClass('cool-box');
+                    // });
+
+
+
+
+            // another example of add and remove class
+
+                // only make submit button visible if password fields match and are at least 5 chars long
+
+
+
+            // toggleClass()
+
+                // toggle awesome-title class on h1 when double clicking it. console log if it has the class
+
+            // $('input').on('keyup', function() {
+            //     if ($('#verify').val() === $('#pass').val() && $(this).val().length > 5) {
+            //         $('#password-btn').removeClass('hidden');
+            //     } else {
+            //         $('#password-btn').addClass('hidden');
+            //     }
+            // });
+
+
+
+
+            // another example of toggleClass()
+
+                // when clicking Night Mode button, add and remove night-mode class to body element
+
+
+                $('#night-mode-btn').click(function(){
+                    $('body').toggleClass('night-mode invisible');
+                });
+
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
