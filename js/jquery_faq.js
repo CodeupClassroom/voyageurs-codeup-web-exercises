@@ -1,7 +1,6 @@
 $(document).ready(function() {
     "use strict";
 
-
     // ATTRIBUTES EXERCISE
     $("#details").click(function() {
         // event.preventDefault();
@@ -41,9 +40,28 @@ $(document).ready(function() {
         $(this).parent().children().first().css('color', 'blue');
     });
 
+    $('.close-btn').click(function(){
+        // this line gets the parent div
+        var mainDiv = $(this).parent().parent();
+        mainDiv.fadeOut();
+    });
 
+    // list of h3 elements
+    var h3s =  $('.parks');
 
+    // Overcomplicated solution to hide the uls just for fun
+    h3s.each(function(i){
+        $(this).next().hide();
+    });
 
+    h3s.click(function(){
+        $(this).next().fadeIn();
+    });
+
+    $('#register').hide();
+    setTimeout(function(){
+        $('#register').fadeIn();
+    }, 8000);
 
 });
 
