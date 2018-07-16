@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    let evens = numbers.filter( n => n % 2 === 0 );
+    console.log('evens', evens);
+
+    // evens = numbers.filter( (n,m) => {
+    //     let res = n % 2;
+    //     return res === 0;
+    // } );
+
+    let incremented = evens.map( n => n+4 );
+    console.log(incremented);
+
+    let sum = incremented.reduce( (accumulation, curNum) => accumulation+curNum, 0);
+
+    console.log('num', sum);
+
+
+</script>
+
+</body>
+</html>
