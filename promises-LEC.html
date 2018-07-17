@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <title>Promises Lecture</title>
+    <!-- Bootstrap CSS -->
+    <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+</head>
+<body>
+    <main class="container">
+        <h1>Promises Lecture</h1>
+    </main>
+<!-- jQuery  -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script>
+{
+    "use strict";
+
+    // ====================================== Promise
+
+    /*
+        A promise is a wrapper around (typically) asynchronous data/actions.
+
+        Two advantages...
+        1. used to reduce "callback hell" / "pyramid of doom" nesting
+        2. enables the promise of data to be passed around as a normal variable
+
+        The jQuery AJAX interface is very similar to promises.
+
+        Promises have now become VERY common in both client and server side JS.
+
+        You will likely handle more promises than create them
+
+    */
+
+
+    // ===================== Basic syntax
+
+        // let goodKid = false;
+        //
+        // // a promise is made to do something
+        // const getCake = new Promise((resolve, reject) => {
+        //    if (goodKid) {
+        //        resolve("Here is some cake");
+        //    } else {
+        //        reject("Bad. No cake. :(");
+        //    }
+        // });
+        //
+        // // once the promise is resolved or rejected, take additional action
+        //
+        // console.log(getCake); // promise object
+
+        // getCake.then((data) => {
+        //     console.log(data);
+        // }).catch((err) => {
+        //    console.log(err);
+        // });
+        //
+
+
+
+    // ===================== Using asynchronous actions and stacking .then()
+
+    // let good = false;
+    //
+    // const bakeCakeIfGood = new Promise((resolve, reject) => {
+    //     if (good) {
+    //         resolve("I'll bake you a cake! :)");
+    //     } else {
+    //         reject("Error");
+    //     }
+    // });
+    //
+    // // bakeCake returns a promise when called
+    // const bakeCake = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve("Your cake is baked. Enjoy!");
+    //     }, 3000);
+    // });
+    //
+    // bakeCakeIfGood.then((result) => {
+    //     console.log(result);
+    //     return bakeCake; // here I am getting another promise that I can call .then on
+    // }).then((result) => {
+    //     console.log(result);
+    // }).catch((err) => {
+    //     console.log(err);
+    // });
+
+
+    // ===================== Chaining asynchronous actions
+
+
+         // won't work :*(
+         //    const goGetPizza = () => {
+         //        setTimeout(() => {
+         //            console.log("I've got the pizza!");
+         //        }, 2000);
+         //    };
+         //
+         //    const cookPizza = () => {
+         //        setTimeout(() => {
+         //            console.log("Pizza is cooked!");
+         //        }, 2000);
+         //    };
+         //
+         //    const eatPizza = () => {
+         //        setTimeout(() => {
+         //            console.log("Pizza is eaten!");
+         //        }, 2000);
+         //    };
+         //
+         //    goGetPizza();
+         //    cookPizza();
+         //    eatPizza();
+
+
+        // ugly solution...
+
+            // const goGetPizza = () => {
+            //     console.log("I've got the pizza!");
+            // };
+            //
+            // const cookPizza = () => {
+            //     console.log("Pizza is cooked!");
+            // };
+            //
+            // const eatPizza = () => {
+            //     console.log("Pizza is eaten!");
+            // };
+            //
+            // const doPizza = () => {
+            //     setTimeout(() => {
+            //         goGetPizza();
+            //         setTimeout(() => {
+            //             cookPizza();
+            //             setTimeout(() => {
+            //                 eatPizza();
+            //             }, 2000);
+            //         }, 2000);
+            //     }, 2000);
+            // };
+            //
+            // doPizza();
+
+
+        // better promises solution
+
+            // const goGetPizza = () => {
+            //     return new Promise((resolve, reject) => {
+            //         setTimeout(() => {
+            //             resolve("I've got the pizza!");
+            //         }, 2000);
+            //     });
+            // };
+            //
+            // const cookPizza = () => {
+            //     return new Promise((res) => {
+            //         setTimeout(() => {
+            //             res("Pizza is cooked!");
+            //         }, 2000);
+            //     });
+            // };
+            //
+            // const eatPizza = () => {
+            //     return new Promise((res) => {
+            //         setTimeout(() => {
+            //             res("Pizza is eaten!");
+            //         }, 2000);
+            //     });
+            // };
+            //
+            // const doPizza = () => {
+            //     goGetPizza().then(m => {
+            //        console.log(m);
+            //        return cookPizza();
+            //     }).then(m => {
+            //         console.log(m);
+            //         return eatPizza();
+            //     }).then(m => {
+            //         console.log(m);
+            //     }).then(() => console.log('Extra .then() runs'))
+            //         .then(() => 3)
+            //         .then(three => three)
+            //         .then((num) => console.log(num))
+            //         .then(() => console.log('Will this run???'))
+            //         .catch(e => console.log(e));
+            // };
+            //
+            // doPizza();
+
+
+    // ===================== AJAX Callback Hell
+
+        // $.ajax('./data/html.json').done(function(data) {
+        //     const id = data.id;
+        //     $('body').append(data.html);
+        //     $.ajax('./data/text.json').done(function(data) {
+        //         $('#' + id).text(data.text);
+        //         $.ajax('./data/color.json').done(function(data) {
+        //             $('#' + id).css('color', data.color);
+        //             $.ajax('./data/star-chars.json').done(function(data) {
+        //                 $('#' + id).append(' ' + data[0].name);
+        //             }).fail(function(jqXhr, status, error) {
+        //                 console.log(error);
+        //             });
+        //         }).fail(function(jqXhr, status, error) {
+        //             console.log(error);
+        //         });
+        //     }).fail(function(jqXhr, status, error) {
+        //         console.log(error);
+        //     });
+        // }).fail(function(jqXhr, status, error) {
+        //     console.log(error);
+        // });
+
+
+    // ===================== AJAX Promise Heaven
+
+        // $.ajax('./data/html.json').then(data => {
+        //     $('body').append(data.html);
+        //     return $.ajax('./data/text.json');
+        // }).then(data => {
+        //     $('p').text(data.text);
+        //     return $.ajax('./data/color.json');
+        // }).then(data => {
+        //     $('p').css('color', data.color);
+        //     return $.ajax('./data/star-chars.json');
+        // }).then(data => {
+        //     $('p').append(' ' + data[0].name);
+        // }).catch((e) => {
+        //     console.log(e.statusText);
+        // }).then(() => console.log("after catch"));
+
+
+
+
+    // ===================== Promises with jQuery AJAX requests
+
+        // normal jQuery AJAX request
+
+           // $.get("http://api.icndb.com/jokes/random").done(function(data) {
+           //     console.log(data.value.joke);
+           // }).fail(function(jqXhr, status, error) {
+           //     console.log(error);
+           // });
+
+        // using jQuery AJAX with promises
+
+            // $.get("http://api.icndb.com/jokes/random").then((data) => {
+            //     console.log(data.value.joke);
+            // }).catch(e => console.log(e));
+
+
+        // using Fetch
+
+            // "dark ages" XMLHttpRequest https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+
+
+            // fetch("http://api.icndb.com/jokes/random")
+            //     .then(response => response.json())
+            //     .then(data => console.log(data.value.joke));
+            //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // fetch('http://api.icndb.com/jokes/random').then((response) => {
+            //     return response.json();
+            // }).then(data => {
+            //     console.log(data.value.joke);
+            // });
+
+
+
+
+
+
+
+    // ===================== Handling Promises (Fetch)
+
+        // // https://stackoverflow.com/questions/1714786/query-string-encoding-of-a-javascript-object
+        // // function used to take in an object of query string params and parse to valid query string
+        // const serialize = function(obj) {
+        //     var str = [];
+        //     for (var p in obj)
+        //         if (obj.hasOwnProperty(p)) {
+        //             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        //         }
+        //     return str.join("&");
+        // };
+        //
+        // const STAR_URL = 'https://swapi.co/api/people?';
+        //
+        // fetch('./data/star-chars.json')
+        //     .then(response => response.json())
+        //     .then(data => fetch(STAR_URL + serialize({search: data[1].name})))
+        //     .then(response => response.json())
+        //     .then(data => console.log(data))
+            // .then(response => response.json())
+            // .then(data => console.log(data));
+
+
+
+
+    // ====================================== Promise.all()
+
+        // const getCoffee = (type) => {
+        //     return processOrder(type);
+        // };
+        //
+        // const processOrder = (type) => {
+        //
+        //     let orderAndPay = new Promise((resolve, reject) => {
+        //         setTimeout(function() {
+        //             resolve(`Coffee of type ${type} has been ordered and paid for!`);
+        //         }, 2000);
+        //     });
+        //
+        //     let makeOrder = new Promise((resolve, reject) => {
+        //         setTimeout(function() {
+        //             resolve(`Coffee of type ${type} is ready!`);
+        //         }, 4000);
+        //     });
+        //
+        //     return Promise.all([orderAndPay, makeOrder]);
+        //
+        // };
+        //
+        // getCoffee("espresso").then((data) => {
+        //     console.log(data[0]);
+        //     console.log(data[1]);
+        //     console.log("You now have a coffee!");
+        // });
+
+
+    // ====================================== Promise.race()
+
+        // const color1Promise = new Promise((res) => {
+        //     setTimeout(res, 2000, fetch('./data/color.json'));
+        // });
+        //
+        // const color2Promise = new Promise((res) => {
+        //     setTimeout(res, 1000, fetch('./data/color2.json'));
+        // });
+        //
+        // const getColor = () => Promise.race([color1Promise, color2Promise]);
+        //
+        // getColor().then(response => response.json()).then(data => console.log(data));
+
+
+}
+</script>
+
+</body>
+</html>
